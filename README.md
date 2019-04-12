@@ -1,8 +1,8 @@
-# React Native Multistep Wizard
+# React Native Animated Multistep
 
 ## How to use
 
-### In the top level comonenet add
+### In the top level component add
 
 ```
 import AnimatedMultistep from 'react-native-animated-multistep'
