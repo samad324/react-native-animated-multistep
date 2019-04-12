@@ -18,6 +18,7 @@ or
 
 ## How to use
 
+you can also see this [example](https://github.com/samad324/react-native-multistep-example)
 
 
 ### In the top level component add
