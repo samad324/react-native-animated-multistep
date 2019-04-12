@@ -1,6 +1,24 @@
 # React Native Animated Multistep
 
+## Preview
+
+![preview 1](https://github.com/samad324/react-native-animated-multistep/blob/master/previews/1.gif)
+![preview 2](https://github.com/samad324/react-native-animated-multistep/blob/master/previews/2.gif)
+
+
+## installation
+
+You can install this package with the following command:
+
+`yarn add react-native-animated-multistep`
+
+or
+
+`npm install react-native-animated-multistep`
+
 ## How to use
+
+
 
 ### In the top level component add
 
