@@ -46,6 +46,18 @@ const allSteps = [
 /* Define your class */
 export default class App extends Component {
 
+/* define the method to be called when you go on next step */
+
+  onNext = () => {
+    console.log("Next");
+  };
+
+  /* define the method to be called when you go on back step */
+
+  onBack = () => {
+    console.log("Back");
+  };
+
 /* define the method to be called when the wizard is finished */
 
   finish = finalState => {
@@ -60,6 +72,8 @@ export default class App extends Component {
           steps={allSteps}
           onFinish={this.finish}
           animate={false}
+          onBack={this.onBack}
+          onNext={this.onNext}
         />
       </View>
     );
@@ -138,7 +152,9 @@ Use this to go to previos step in the app.
 |         Props           | Type                | Notes | Required |
 | ------------------ | ------------------- | --- | ------- |
 | steps           | `Array`          | array containing steps | ✔️      |
-| onFinish             | `function`            | a function, which will run when all steps are finish  | ✔️       |
+| onFinish             | `function`            | a function, which will run when all steps are finish  | ❌       |
+| onNext             | `function`            | a function, which will run when you go on next step  | ❌       |
+| onBack            | `function`            | a function, which will run when you go on back step   | ❌       |
 | animate         | `Boolean`        | specify `true` or `false`, in order to animate your steps  | ❌       |
 
 ### Methods
