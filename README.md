@@ -2,8 +2,8 @@
 
 ## Preview
 
-![GIF](https://github.com/samad324/react-native-animated-multistep/blob/master/previews/1.1.gif)
-![GIF](https://github.com/samad324/react-native-animated-multistep/blob/master/previews/1.2.gif)
+![GIF](previews/1.1.gif)
+![GIF](previews/1.2.gif)
 
 ## installation
 
