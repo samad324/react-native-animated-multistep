@@ -2,9 +2,8 @@
 
 ## Preview
 
-![preview 1](https://github.com/samad324/react-native-animated-multistep/blob/master/previews/1.gif)
-![preview 2](https://github.com/samad324/react-native-animated-multistep/blob/master/previews/2.gif)
-
+![GIF](https://github.com/samad324/react-native-animated-multistep/blob/master/previews/1.1.gif)
+![GIF](https://github.com/samad324/react-native-animated-multistep/blob/master/previews/1.2.gif)
 
 ## installation
 
@@ -19,7 +18,6 @@ or
 ## How to use
 
 you can also see this [example](https://github.com/samad324/react-native-multistep-example)
-
 
 ### In the top level component add
 
@@ -136,7 +134,7 @@ Use this to save state
 
 ### this.props.getState()
 
-Use this to get all the values saved with saveState so far. Retuns an object 
+Use this to get all the values saved with saveState so far. Retuns an object
 
 ### this.props.next()
 
@@ -146,23 +144,21 @@ Use this to go to next step in the app.
 
 Use this to go to previos step in the app.
 
-
 ### Props
 
-|         Props           | Type                | Notes | Required |
-| ------------------ | ------------------- | --- | ------- |
-| steps           | `Array`          | array containing steps | ✔️      |
-| onFinish             | `function`            | a function, which will run when all steps are finish  | ❌       |
-| onNext             | `function`            | a function, which will run when you go on next step  | ❌       |
-| onBack            | `function`            | a function, which will run when you go on back step   | ❌       |
-| animate         | `Boolean`        | specify `true` or `false`, in order to animate your steps  | ❌       |
+| Props    | Type       | Notes                                                     | Required |
+| -------- | ---------- | --------------------------------------------------------- | -------- |
+| steps    | `Array`    | array containing steps                                    | ✔️       |
+| onFinish | `function` | a function, which will run when all steps are finish      | ❌       |
+| onNext   | `function` | a function, which will run when you go on next step       | ❌       |
+| onBack   | `function` | a function, which will run when you go on back step       | ❌       |
+| animate  | `Boolean`  | specify `true` or `false`, in order to animate your steps | ❌       |
 
 ### Methods
 
-|         Method Name           | Arguments                | Notes |
-| ------------------ | ------------------- | --- |
-| `next()`             | `none`             | use this method to jump on next step  |
-| `back()`           | `none`          | use this method to go back on previos step   | 
-| `saveState()`             | `Object`             | use this method to save your state,  in order to get in other steps  | 
-| `getState()`          | `none`         | use this method to get you saved state by `saveState()` method  | 
-
+| Method Name   | Arguments | Notes                                                              |
+| ------------- | --------- | ------------------------------------------------------------------ |
+| `next()`      | `none`    | use this method to jump on next step                               |
+| `back()`      | `none`    | use this method to go back on previos step                         |
+| `saveState()` | `Object`  | use this method to save your state, in order to get in other steps |
+| `getState()`  | `none`    | use this method to get you saved state by `saveState()` method     |
