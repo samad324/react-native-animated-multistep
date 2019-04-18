@@ -1,6 +1,6 @@
 {
   "name": "react-native-animated-multistep",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "this a cool animated package for handle multi step screens of react native",
   "main": "index.js",
   "directories": {
