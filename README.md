@@ -69,9 +69,12 @@ export default class App extends Component {
         <AnimatedMultistep
           steps={allSteps}
           onFinish={this.finish}
-          animate={false}
           onBack={this.onBack}
           onNext={this.onNext}
+          comeInOnNext="bounceInUp"
+          OutOnNext="bounceOutDown"
+          comeInOnBack="bounceInDown"
+          OutOnBack="bounceOutUp"
         />
       </View>
     );
@@ -152,7 +155,13 @@ Use this to go to previos step in the app.
 | onFinish | `function` | a function, which will run when all steps are finish      | ❌       |
 | onNext   | `function` | a function, which will run when you go on next step       | ❌       |
 | onBack   | `function` | a function, which will run when you go on back step       | ❌       |
-| animate  | `Boolean`  | specify `true` or `false`, in order to animate your steps | ❌       |
+| comeInOnNext  | `String`  | define you animation type when the component comes in on next, default is `bounceInLeft` | ❌       |
+| OutOnNext  | `String`  | define you animation type when the component goes out on next, default is `bounceOutRight`  | ❌       |
+| comeInOnBack  | `String`  | define you animation type when the component comes in on back, default is `bounceInRight` | ❌       |
+| OutOnBack  | `String`  | define you animation type when the component goes out on next, default is `bounceOutLeft` | ❌       |
+
+### Note: 
+you can more animation and set-up animations by your self on [react-native-animatable](https://github.com/oblador/react-native-animatable)
 
 ### Methods
 

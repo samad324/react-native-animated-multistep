@@ -9,6 +9,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "dependencies": {
+    "react-native-animatable": "^1.3.2"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/samad324/react-native-animated-multistep.git"
