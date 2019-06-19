@@ -161,7 +161,7 @@ Use this to go to previos step in the app.
 | OutOnBack  | `String`  | define you animation type when the component goes out on next, default is `bounceOutLeft` | ❌       |
 
 ### Note: 
-you can more animation and set-up animations by your self on [react-native-animatable](https://github.com/oblador/react-native-animatable)
+you can more animation and set-up animations by your self on [react-native-animatable](https://github.com/oblador/react-native-animatable#animatableexplorer-example)
 
 ### Methods
 
