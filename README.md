@@ -2,8 +2,8 @@
 
 ## Preview
 
-![GIF](previews/1.1.gif)
-![GIF](previews/1.2.gif)
+![GIF](previews/1.gif)
+![GIF](previews/2.gif)
 
 ## installation
 
