@@ -169,6 +169,6 @@ you can more animation and set-up animations by your self on [react-native-anima
 | Method Name   | Arguments | Notes                                                              |
 | ------------- | --------- | ------------------------------------------------------------------ |
 | `next()`      | `none`    | use this method to jump on next step                               |
-| `back()`      | `none`    | use this method to go back on previos step                         |
+| `back()`      | `none`    | use this method to go back on previous step                         |
 | `saveState()` | `Object`  | use this method to save your state, in order to get in other steps |
 | `getState()`  | `none`    | use this method to get you saved state by `saveState()` method     |
