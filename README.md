@@ -22,7 +22,7 @@ you can also see this [example](https://github.com/samad324/react-native-multist
 
 ### In the top level component add
 
-```
+```js
 import AnimatedMultistep from 'react-native-animated-multistep'
 import StepOne from './StepOne'
 import StepTwo from './StepTwo'
@@ -85,7 +85,7 @@ export default class App extends Component {
 
 ### In the step
 
-```
+```js
 import React, { Component } from "react";
 import { Text, View, TouchableOpacity } from "react-native";
 
@@ -162,7 +162,7 @@ Use this to go to previos step in the app.
 | OutOnBack  | `String`  | define you animation type when the component goes out on next, default is `bounceOutLeft` | ❌       |
 
 ### Note: 
-you can more animation and set-up animations by your self on [react-native-animatable](https://github.com/oblador/react-native-animatable#animatableexplorer-example)
+you can add more animation and set-up animations by your own, check [react-native-animatable](https://github.com/oblador/react-native-animatable#animatableexplorer-example) for aminations.
 
 ### Methods
 
