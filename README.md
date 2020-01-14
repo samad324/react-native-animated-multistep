@@ -3,8 +3,6 @@
 ## Preview
 
 ![GIF](previews/1.gif)
-![GIF](previews/2.gif)
-
 
 ## installation
 
@@ -23,10 +21,10 @@ you can also see this [example](https://github.com/samad324/react-native-multist
 ### In the top level component add
 
 ```js
-import AnimatedMultistep from 'react-native-animated-multistep'
-import StepOne from './StepOne'
-import StepTwo from './StepTwo'
-import StepThree from './StepThree'
+import AnimatedMultistep from "react-native-animated-multistep";
+import StepOne from "./StepOne";
+import StepTwo from "./StepTwo";
+import StepThree from "./StepThree";
 
 /* Define the steps  */
 
@@ -44,8 +42,7 @@ const allSteps = [
 
 /* Define your class */
 export default class App extends Component {
-
-/* define the method to be called when you go on next step */
+  /* define the method to be called when you go on next step */
 
   onNext = () => {
     console.log("Next");
@@ -57,13 +54,13 @@ export default class App extends Component {
     console.log("Back");
   };
 
-/* define the method to be called when the wizard is finished */
+  /* define the method to be called when the wizard is finished */
 
   finish = finalState => {
     console.log(finalState);
   };
 
-/* render MultiStep */
+  /* render MultiStep */
   render() {
     return (
       <View style={{ flex: 1 }}>
@@ -79,7 +76,7 @@ export default class App extends Component {
         />
       </View>
     );
-}
+  }
 }
 ```
 
@@ -87,15 +84,26 @@ export default class App extends Component {
 
 ```js
 import React, { Component } from "react";
-import { Text, View, TouchableOpacity } from "react-native";
+import { Image, View, TouchableOpacity, TextInput, Text } from "react-native";
 
 import styles from "./styles";
 
 class step1 extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      totalSteps: "",
+      currentStep: ""
+    };
   }
+
+  static getDerivedStateFromProps = props => {
+    const { getTotalSteps, getCurrentStep } = props;
+    return {
+      totalSteps: getTotalSteps(),
+      currentStep: getCurrentStep()
+    };
+  };
 
   nextStep = () => {
     const { next, saveState } = this.props;
@@ -113,12 +121,35 @@ class step1 extends Component {
   }
 
   render() {
+    const { currentStep, totalSteps } = this.state;
     return (
       <View style={[styles.container, styles.step1]}>
-        <Text> Step 1 </Text>
+        <View>
+          <Text
+            style={styles.currentStepText}
+          >{`Step ${currentStep} of ${totalSteps}`}</Text>
+        </View>
+        <TextInput
+          style={styles.input}
+          onChangeText={text => this.setState({ text })}
+          value={this.state.text}
+          placeholder={"First Name"}
+          placeholderTextColor="#fff"
+        />
+        <TextInput
+          style={styles.input}
+          onChangeText={text => this.setState({ text })}
+          value={this.state.text}
+          placeholder={"Last Name"}
+          placeholderTextColor="#fff"
+        />
         <View style={styles.btnContainer}>
-          <TouchableOpacity onPress={this.nextStep}>
-            <Text>Next</Text>
+          <TouchableOpacity onPress={this.nextStep} style={styles.btnStyle}>
+            <Image
+              source={require("../assets/icons/arrow.png")}
+              style={styles.btnImage}
+              resizeMode="cover"
+            />
           </TouchableOpacity>
         </View>
       </View>
@@ -127,48 +158,58 @@ class step1 extends Component {
 }
 
 export default step1;
-
 ```
 
 ## API
 
 ### this.props.saveState({ key: value, key2: value2})
 
-Use this to save state
+Use this method to save state
 
 ### this.props.getState()
 
-Use this to get all the values saved with saveState so far. Retuns an object
+Use this method to get all the values saved with saveState so far. Retuns an object
 
 ### this.props.next()
 
-Use this to go to next step in the app.
+Use this method to go to next step in the app.
 
 ### this.props.back()
 
-Use this to go to previos step in the app.
+Use this method to go to previos step in the app.
+
+### this.props.getCurrentStep()
+
+Use this method to get current step.
+
+### this.props.getTotalSteps()
+
+Use this method to get total steps.
 
 ### Props
 
-| Props    | Type       | Notes                                                     | Required |
-| -------- | ---------- | --------------------------------------------------------- | -------- |
-| steps    | `Array`    | array containing steps                                    | ✔️       |
-| onFinish | `function` | a function, which will run when all steps are finish      | ❌       |
-| onNext   | `function` | a function, which will run when you go on next step       | ❌       |
-| onBack   | `function` | a function, which will run when you go on back step       | ❌       |
-| comeInOnNext  | `String`  | define you animation type when the component comes in on next, default is `bounceInLeft` | ❌       |
-| OutOnNext  | `String`  | define you animation type when the component goes out on next, default is `bounceOutRight`  | ❌       |
-| comeInOnBack  | `String`  | define you animation type when the component comes in on back, default is `bounceInRight` | ❌       |
-| OutOnBack  | `String`  | define you animation type when the component goes out on next, default is `bounceOutLeft` | ❌       |
+| Props        | Type       | Notes                                                                                    | Required |
+| ------------ | ---------- | ---------------------------------------------------------------------------------------- | -------- |
+| steps        | `Array`    | array containing steps                                                                   | ✔️       |
+| onFinish     | `function` | a function, which will run when all steps are finish                                     | ❌       |
+| onNext       | `function` | a function, which will run when you go on next step                                      | ❌       |
+| onBack       | `function` | a function, which will run when you go on back step                                      | ❌       |
+| comeInOnNext | `String`   | define you animation type when the component comes in on next, default is `fadeInLeft`   | ❌       |
+| OutOnNext    | `String`   | define you animation type when the component goes out on next, default is `fadeOutRight` | ❌       |
+| comeInOnBack | `String`   | define you animation type when the component comes in on back, default is `fadeInRight`  | ❌       |
+| OutOnBack    | `String`   | define you animation type when the component goes out on next, default is `fadeOutLeft`  | ❌       |
 
-### Note: 
+### Note:
+
 you can add more animation and set-up animations by your own, check [react-native-animatable](https://github.com/oblador/react-native-animatable#animatableexplorer-example) for aminations.
 
 ### Methods
 
-| Method Name   | Arguments | Notes                                                              |
-| ------------- | --------- | ------------------------------------------------------------------ |
-| `next()`      | `none`    | use this method to jump on next step                               |
-| `back()`      | `none`    | use this method to go back on previous step                         |
-| `saveState()` | `Object`  | use this method to save your state, in order to get in other steps |
-| `getState()`  | `none`    | use this method to get you saved state by `saveState()` method     |
+| Method Name        | Arguments | Notes                                                              |
+| ------------------ | --------- | ------------------------------------------------------------------ |
+| `next()`           | `none`    | use this method to jump on next step                               |
+| `back()`           | `none`    | use this method to go back on previous step                        |
+| `saveState()`      | `Object`  | use this method to save your state, in order to get in other steps |
+| `getState()`       | `none`    | use this method to get you saved state by `saveState()` method     |
+| `getCurrentStep()` | `none`    | use this method to get current step                                |
+| `getTotalSteps()`  | `none`    | use this method to get total steps                                 |
