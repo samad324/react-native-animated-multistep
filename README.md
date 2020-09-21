@@ -199,6 +199,7 @@ Use this method to get total steps.
 | comeInOnBack | `String`   | define you animation type when the component comes in on back, default is `fadeInRight`  | ❌       |
 | OutOnBack    | `String`   | define you animation type when the component goes out on next, default is `fadeOutLeft`  | ❌       |
 | duration    | `number`   | define you animation duration `duration`  | ❌       |
+| defaultState   | `Object`   | define your default state to use across the steps, default is `empty`   | ❌       |
 
 ### Note:
 
