@@ -22,9 +22,6 @@ you can also see this [example](https://github.com/samad324/react-native-multist
 
 ```js
 import AnimatedMultistep from "react-native-animated-multistep";
-import StepOne from "./StepOne";
-import StepTwo from "./StepTwo";
-import StepThree from "./StepThree";
 
 /* Define the steps  */
 
