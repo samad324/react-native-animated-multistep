@@ -163,6 +163,10 @@ export default step1;
 
 Use this method to save state
 
+### this.props.resetState()
+
+Use this method to reset state
+
 ### this.props.getState()
 
 Use this method to get all the values saved with saveState so far. Retuns an object
@@ -209,6 +213,7 @@ you can add more animation and set-up animations by your own, check [react-nativ
 | `next()`           | `none`    | use this method to jump on next step                               |
 | `back()`           | `none`    | use this method to go back on previous step                        |
 | `saveState()`      | `Object`  | use this method to save your state, in order to get in other steps |
+| `resetState()`  | `none`    | use this method to for reset state                          |
 | `getState()`       | `none`    | use this method to get you saved state by `saveState()` method     |
 | `getCurrentStep()` | `none`    | use this method to get current step                                |
 | `getTotalSteps()`  | `none`    | use this method to get total steps                                 |
